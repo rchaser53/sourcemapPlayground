@@ -1,0 +1,22 @@
+{
+  "name": "sourcemap-playground",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "ts": "tsc test.ts --module None --sourceMap --mapRoot ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rchaser53/sourcemapPlayground.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rchaser53/sourcemapPlayground/issues"
+  },
+  "homepage": "https://github.com/rchaser53/sourcemapPlayground#readme",
+  "dependencies": {
+    "typescript": "^2.3.3"
+  }
+}
