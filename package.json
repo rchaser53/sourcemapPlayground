@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ts": "tsc test.ts --module None --sourceMap --mapRoot ./"
+    "ts": "tsc test.ts --module None --sourceMap --mapRoot ./",
+    "uglify": "uglifyjs test.js -o test.min.js -c -m --source-map url=test.min.js.map"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,9 @@
   },
   "homepage": "https://github.com/rchaser53/sourcemapPlayground#readme",
   "dependencies": {
-    "typescript": "^2.3.3"
+    "multi-stage-sourcemap": "^0.2.1",
+    "sorcery": "^0.10.0",
+    "typescript": "^2.3.3",
+    "uglify-js": "^3.0.15"
   }
 }
