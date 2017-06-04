@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "karma": "karma",
     "test": "npm run ts && npm run uglify && node multipleSoucemap",
     "start": "webpack-dev-server",
     "ts": "tsc test.ts --module None --sourceMap --mapRoot ./",
@@ -42,5 +43,9 @@
     "webpack-hot-middleware": "^2.16.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "karma-chrome-launcher": "^2.1.1",
+    "karma-jasmine": "^1.1.0"
   }
 }
