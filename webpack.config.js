@@ -3,9 +3,9 @@ const path = require("path");
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   entry: {
-    index: "./index.ts"
+    index: "./index.tsx"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
