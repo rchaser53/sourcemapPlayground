@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run ts && npm run uglify && node multipleSoucemap",
+    "start": "webpack-dev-server",
     "ts": "tsc test.ts --module None --sourceMap --mapRoot ./",
     "uglify": "uglifyjs test.js -o test.min.js -c -m --source-map url=test.min.js.map"
   },
@@ -22,6 +23,20 @@
     "multi-stage-sourcemap": "^0.2.1",
     "sorcery": "^0.10.0",
     "typescript": "^2.3.3",
-    "uglify-js": "^3.0.15"
+    "source-map-loader": "0.1.6",
+    "stack-source-map": "1.0.6",
+    "style-loader": "^0.13.1",
+    "ts-loader": "^2.0.0",
+    "uglify-js": "^3.0.15",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.4.0",
+    "babel-plugin-transform-object-rest-spread": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "css-loader": "^0.26.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-dev-server": "^2.3.0",
+    "webpack-hot-middleware": "^2.16.1"
   }
 }
