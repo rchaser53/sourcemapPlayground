@@ -5,6 +5,7 @@ const encodeZigZag = (num) => {
 }
 const decodeZigZag = (num) => {
   return ((num >>> 1) ^ -(num & 1))
+  return abc
 }
 
 console.log('encode', encodeZigZag(1));
