@@ -1,6 +1,6 @@
 const bit = 8;
 
-const encodeZigZag = (n) => {
+const encodeZigZag = (num) => {
   return ((num << 1) ^ (num >> bit - 1))
 }
 const decodeZigZag = (num) => {
