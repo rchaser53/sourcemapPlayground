@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="base64vlq.js"></script>
+    <script>
+      window.onload = () => {
+        const setValueToConverter = (event) => {
+          doConvert(event.target.value.trim());
+        };
+        document.querySelector('#inputValue').addEventListener('change', setValueToConverter)
+      }
+    </script>
+
+  </head>
+  <body>
+    <input id="inputValue" />
+  </body>
+</html>
+
