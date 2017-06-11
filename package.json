@@ -5,10 +5,11 @@
   "main": "index.js",
   "scripts": {
     "karma": "karma",
-    "test": "npm run ts && npm run uglify && node multipleSoucemap",
     "start": "webpack-dev-server",
-    "ts": "tsc test.ts --module None --sourceMap --mapRoot ./",
-    "uglify": "uglifyjs test.js -o test.min.js -c -m --source-map url=test.min.js.map"
+    "sourcemap": "npm run tsc-sourcemap && npm run minify-sourcemap && npm run create-multi-stage-sourcemap",
+    "tsc-sourcemap": "tsc src/sourcemapTest.ts --outdir dist --module None --sourceMap",
+    "minify-sourcemap": "uglifyjs dist/sourcemapTest.js -o dist/sourcemapTest.min.js -c -m --source-map url=sourcemapTest.min.js.map",
+    "create-multi-stage-sourcemap": "node task/multiStageSoucemap.js"
   },
   "repository": {
     "type": "git",

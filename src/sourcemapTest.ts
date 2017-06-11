@@ -9,3 +9,12 @@ const abc = (arg: string): Poyo => {
     hoge: arg
   }
 }
+
+try {
+  interface Nyan {
+    ara: number;
+  }
+  abc('bubera')
+} catch (error) {
+  console.error('error')
+}
