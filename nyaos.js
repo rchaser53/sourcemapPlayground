@@ -1,0 +1,49 @@
+const fs = require('fs')
+const path = require('path')
+
+const base64 = require('base-64')
+const utf8 = require('utf8')
+const {
+  SourceMapConsumer,
+  SourceMapGenerator
+} = require('source-map')
+
+// const rawSourceMap = JSON.parse( fs.readFileSync('test.css.map', 'utf8') )
+
+// const consumer = new SourceMapConsumer(rawSourceMap);
+// const generator = SourceMapGenerator.fromSourceMap(consumer);
+
+// const before = "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"
+
+const content = fs.readFileSync('test.css.map', 'utf8')
+const hoge = base64.encode(utf8.encode(content))
+
+const targetContent = `
+${fs.readFileSync('my-page.css', 'utf8')}
+/*# sourceMappingURL=data:application/json;base64,${hoge} */
+`
+
+fs.writeFileSync('my-page-inline.css', targetContent)
+
+// console.log(consumer.sourceContentFor( '/less/ecss/sitewide.less'))
+// console.log(consumer.eachMapping())
+
+// const sourceContent = consumer.sourceContentFor( '/less/ecss/sitewide.less');
+
+// const hoge = base64.encode(utf8.encode(sourceContent))
+
+// console.log(hoge)
+
+// consumer.sources.forEach((source) => {
+//   let content = '';
+//   try {
+//     content = fs.readFileSync(path.join(rootDir, source));
+//   } catch (err) {
+//     content = '';
+//   }
+//   generator.setSourceContent(source, content.toString(), 'utf8');
+// });
+
+
+
+// return generator.toString();
